@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "Employee Management REST API - Codenzic Assessment",
+    "description": "Postman collection covering CRUD operations, filtering, pagination, and error validations.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Create Employee (201 Created)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Baby\",\n  \"email\": \"thomas@example.com\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Java Developer\",\n  \"salary\": 35000.00,\n  \"status\": \"ACTIVE\"\n}"
+        },
+        "url": "http://localhost:8080/api/v1/employees"
+      }
+    },
+    {
+      "name": "2. Get All Employees (Paginated & Filtered)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/employees?page=0&size=10&sortBy=id&direction=desc&department=Engineering&status=ACTIVE",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "employees"],
+          "query": [
+            { "key": "page", "value": "0" },
+            { "key": "size", "value": "10" },
+            { "key": "sortBy", "value": "id" },
+            { "key": "direction", "value": "desc" },
+            { "key": "department", "value": "Engineering" },
+            { "key": "status", "value": "ACTIVE" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Get Employee By ID (200 OK)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/employees/1"
+      }
+    },
+    {
+      "name": "4. Update Employee (200 OK)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Baby\",\n  \"email\": \"thomas@example.com\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Java Developer\",\n  \"salary\": 35000.00,\n  \"status\": \"ACTIVE\"\n}"
+        },
+        "url": "http://localhost:8080/api/v1/employees/1"
+      }
+    },
+    {
+      "name": "5. Delete Employee (204 No Content)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/employees/1"
+      }
+    },
+    {
+      "name": "6. Validation Failure Example (400 Bad Request)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"email\": \"invalid-email-address\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Junior Dev\",\n  \"salary\": -500,\n  \"status\": \"\"\n}"
+        },
+        "url": "http://localhost:8080/api/v1/employees"
+      }
+    },
+    {
+      "name": "7. Duplicate Email Conflict Example (409 Conflict)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Duplicate\",\n  \"email\": \"thomas@example.com\",\n  \"department\": \"QA\",\n  \"designation\": \"Tester\",\n  \"salary\": 60000.00,\n  \"status\": \"ACTIVE\"\n}"
+        },
+        "url": "http://localhost:8080/api/v1/employees"
+      }
+    }
+  ]
+}
