@@ -17,7 +17,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Baby\",\n  \"email\": \"thomas@example.com\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Java Developer\",\n  \"salary\": 35000.00,\n  \"status\": \"ACTIVE\"\n}"
+          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Baby\",\n  \"email\": \"thomas@gmail.com\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Java Developer\",\n  \"salary\": 35000.00,\n  \"status\": \"ACTIVE\"\n}"
         },
         "url": "http://localhost:8080/api/v1/employees"
       }
@@ -64,7 +64,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Baby\",\n  \"email\": \"thomas@example.com\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Java Developer\",\n  \"salary\": 35000.00,\n  \"status\": \"ACTIVE\"\n}"
+          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Baby\",\n  \"email\": \"thomas@gmail.com\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Java Developer\",\n  \"salary\": 35000.00,\n  \"status\": \"ACTIVE\"\n}"
         },
         "url": "http://localhost:8080/api/v1/employees/1"
       }
@@ -106,7 +106,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Duplicate\",\n  \"email\": \"thomas@example.com\",\n  \"department\": \"QA\",\n  \"designation\": \"Tester\",\n  \"salary\": 60000.00,\n  \"status\": \"ACTIVE\"\n}"
+          "raw": "{\n  \"firstName\": \"Thomas\",\n  \"lastName\": \"Duplicate\",\n  \"email\": \"thomas@gmail.com\",\n  \"department\": \"QA\",\n  \"designation\": \"Tester\",\n  \"salary\": 60000.00,\n  \"status\": \"ACTIVE\"\n}"
         },
         "url": "http://localhost:8080/api/v1/employees"
       }
