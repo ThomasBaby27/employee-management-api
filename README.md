@@ -129,7 +129,7 @@ Response (409 Conflict):
   "timestamp": "2026-10-21T21:21:00.000",
   "status": 409,
   "error": "Conflict",
-  "message": "Employee with email alex.rivera@example.com already exists",
+  "message": "Employee with email thomas@example.com already exists",
   "path": "/api/v1/employees"
 }
 
